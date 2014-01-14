@@ -42,13 +42,13 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
 
 <h4>2. Creating Menu Template as Sub Template</h4>
         // `menu` variable is used as a Main Object inside Template.
-        var tplData = "
+        var tplData = '
             <ul class="nav navbar-nav">
                 <% _.each(menu.items, function(item) { %>
                     <li><a href="#<%= item.href %>"> <%= item.title %> </a></li>
                 <% }); %>
             </ul>
-        ";
+        ';
 
         // JSON Object of Template Data.
         var tplVars = {
@@ -67,7 +67,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
 <h4>2. Creating Main Template as Header Template and Compiled Menu data Will be Available inside the Template.</h4>
         // `header` variable is used as a Main Object inside Template.
         // `header.menu` will be retrieved from Template Buffer and Added to Template JSON Data.
-        var tplData = "
+        var tplData = '
         <header class="main-header">
             <nav id="menu" class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -79,7 +79,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
                 </div>
             </nav>
         </header>
-        ";
+        ';
 
         // JSON Object of Template Data.
         // `header.menu` will be retrieved from Template Buffer and Added to Template JSON Data.
