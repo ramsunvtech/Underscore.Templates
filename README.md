@@ -40,7 +40,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
         </header>
         <!-- Header (Main) Template Ends Here -->
 
-<h4>2. Creating Menu Template is Sub Template</h4>
+<h4>2. Creating Menu Template as Sub Template</h4>
         // `menu` variable is used as a Main Object inside Template.
         var tplData = "
             <ul class="nav navbar-nav">
@@ -64,7 +64,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
         // This will compile the Template and Store in to Template Buffer, which can be used while merge Templates.
         _.subTpl('menu', tplData, tplVars);
         
-<h4>2. Creating Main Template is Header Template and Compiled Menu data Will be Available inside the Template.</h4>
+<h4>2. Creating Main Template as Header Template and Compiled Menu data Will be Available inside the Template.</h4>
         // `header` variable is used as a Main Object inside Template.
         // `header.menu` will be retrieved from Template Buffer and Added to Template JSON Data.
         var tplData = "
