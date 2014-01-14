@@ -38,17 +38,18 @@ _.mixin({
       "compiledTpl": compiledTpl
     });
   },
-
+  
   /**
-   * The `dependentTpls` Function will first compile the given template and merge the dependent Sub Templates from the Tpl Buffer.
-   * @param  {[string]} tplObj  The Main Base Object is used inside the template.
-   * @param  {[string]} tpl     Underscore HTML Template data.
-   * @param  {[object]} tplVars Object parsed to the Template.
-   * @return {[string]}         Return Compiled HTML Template data.
+   * The `mergeTpls` Function will first compile the given template and merge the dependent Sub Templates from the Tpl Buffer.
+   * @param  {[string]} tplObj    The Main Base Object is used inside the template.
+   * @param  {[string]} tpl       Underscore HTML Template data.
+   * @param  {[object]} tplVars   Object parsed to the Template.
+   * @param  {[bool]} clearBuffer If True, Clear the Template Buffer.
+   * @return {[type]}             Return Compiled HTML Template data.
    */
-  dependentTpls: function (tplObj, tpl, tplVars) {
+  mergeTpl: function (tplObj, tpl, tplVars, clearBuffer) {
     var tplBuffer = _.tplBuffer;
-    _.tplBuffer = [];
+    if(clearBuffer) _.tplBuffer = [];
 
     if(_.isArray(tplBuffer)) {
       for(index in tplBuffer) {
@@ -61,6 +62,26 @@ _.mixin({
     }
     var compiledTpl = _.tpl(tplObj, tpl, tplVars);
     return compiledTpl;
+  },
+
+  /**
+   * The `mergeSubTpl` Function will merge all the Buffer Sub Tpls.
+   * @param  {[type]} clearBuffer If True, Clear the Template Buffer.
+   * @return {[string]}           Return Compiled HTML Template data.
+   */
+  mergeSubTpl: function (clearBuffer) {
+    var tplBuffer = _.tplBuffer, tplVars = [];
+    if(clearBuffer) _.tplBuffer = [];
+
+    if(_.isArray(tplBuffer)) {
+      for(index in tplBuffer) {
+        var tplData = tplBuffer[index].compiledTpl;
+        tplVars.push(tplData);
+      }
+
+      var mergedTpl = tplVars.join('');
+      return mergedTpl;
+    }
   }
 
 });
