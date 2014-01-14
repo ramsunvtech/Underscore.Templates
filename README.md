@@ -88,4 +88,4 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
         };
 
         // This will compile the Template and Merge dependent Templates from Buffer.
-        _.dependentTpls('header', tplData, tplVars);
+        _.mergeTpl('header', tplData, tplVars);
