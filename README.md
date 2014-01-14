@@ -12,8 +12,8 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
 <ol>
  <li>_.tpl()</li>
  <li>_.subTpl()</li>
- <li>_.recursiveTpl()</li>
- <li>_.mergeTpl() - (Coming Soon ...)</li>
+ <li>_.mergeTpl()</li>
+ <li>_.mergeSubTpl()</li>
 </ol>
 </p>
 
