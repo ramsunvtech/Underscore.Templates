@@ -45,7 +45,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
         var tplData = "
             <ul class="nav navbar-nav">
                 <% _.each(menu.items, function(item) { %>
-                    <li><a href="#education">Education</a>
+                    <li><a href="#<%= item.href %>"> <%= item.title %> </a></li>
                 <% }); %>
             </ul>
         ";
