@@ -14,7 +14,7 @@ var PageView = Backbone.View.extend({
     var pageEl = this.$el;
 
     // `menu` variable is used as a Main Object inside Template.
-    var tplData = '<ul class="nav navbar-nav"> <% _.each(menu.items, function(item) { %> <li> <a href="#<%= item.href %>"> <%= item.title %> </a> </li> <% }); %> </ul>';
+    var tplData = '<ul class="nav navbar-nav"> <% _.each(menu.items, function(item) { %> <li> <a href="<%= item.href %>"> <%= item.title %> </a> </li> <% }); %> </ul>';
 
     // JSON Object of Template Data.
     var tplVars = {
@@ -24,6 +24,9 @@ var PageView = Backbone.View.extend({
         },{
             "href": "#photos",
             "title": "My Photos"
+        }, {
+            "href": "#About",
+            "title": "About Me"
         }]
     };
 
@@ -40,15 +43,11 @@ var PageView = Backbone.View.extend({
         "siteName": "Your Site Name"
     };
 
-    // This will compile the Template and Merge dependent Templates from Buffer
-    var compiledHeaderTpl = _.dependentTpls('header', headerTplData, headerTplVars);
+    // This will compile the Template and Merge dependent Templates from Buffer.
+    var compiledHeaderTpl = _.mergeTpl('header', headerTplData, headerTplVars);
 
     pageEl.html(compiledHeaderTpl);
   }
 });
-
-/**
-  Router Code Starts Here
- */
 
 new PageView();
