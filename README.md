@@ -19,6 +19,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
 
 <h2>How to Use Sub Template then Merge to Main Template?.</h2>
 <h4>1. Expected Output which has Header as Main Template and Menu as Sub Template</h4>
+```html
         <!-- Header (Main) Template Starts Here -->
         <header class="main-header">
             <nav id="menu" class="navbar navbar-default" role="navigation">
@@ -39,6 +40,7 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
             </nav>
         </header>
         <!-- Header (Main) Template Ends Here -->
+```
 
 <h4>2. Creating Menu Template as Sub Template</h4>
         // `menu` variable is used as a Main Object inside Template.
