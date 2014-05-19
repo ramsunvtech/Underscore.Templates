@@ -20,26 +20,26 @@ This Underscore Mixin used for creating Sub Templates for Recursive Templates an
 <h2>How to Use Sub Template then Merge to Main Template?.</h2>
 <h4>1. Expected Output which has Header as Main Template and Menu as Sub Template</h4>
 ```html
-        <!-- Header (Main) Template Starts Here -->
-        <header class="main-header">
-            <nav id="menu" class="navbar navbar-default" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand active" href="#">Site Name</a>
-                </div>
+ <!-- Header (Main) Template Starts Here -->
+ <header class="main-header">
+     <nav id="menu" class="navbar navbar-default" role="navigation">
+         <div class="navbar-header">
+             <a class="navbar-brand active" href="#">Site Name</a>
+         </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- Menu (Sub) Template Starts Here -->
-                    <ul class="nav navbar-nav">
-                        <li><a href="#education">Education</a>
-                        </li>
-                        <li><a href="#">My Photos</a>
-                        </li>
-                    </ul>
-                    <!-- Menu (Sub) Template Ends Here -->
-                </div>
-            </nav>
-        </header>
-        <!-- Header (Main) Template Ends Here -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <!-- Menu (Sub) Template Starts Here -->
+             <ul class="nav navbar-nav">
+                 <li><a href="#education">Education</a>
+                 </li>
+                 <li><a href="#">My Photos</a>
+                 </li>
+             </ul>
+             <!-- Menu (Sub) Template Ends Here -->
+         </div>
+     </nav>
+ </header>
+ <!-- Header (Main) Template Ends Here -->
 ```
 
 <h4>2. Creating Menu Template as Sub Template</h4>
